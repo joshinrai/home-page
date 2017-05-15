@@ -3,7 +3,7 @@
   height:100%;
   /*background-color: #222;*/
   opacity:0.75;
-  background-image:url("../public/background-1.jpg");
+  background-image:url("../../public/background-1.jpg");
   background-repeat:no-repeat;
   background-size:cover;
   text-align: center;
@@ -15,7 +15,7 @@
 }
 
 .App-header {
-  height: 90%;
+  height: 85%;
   padding: 20px;
   color: white;
 }
@@ -29,4 +29,26 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.App-header > ul{
+  height:85%;
+}
+
+.App-header > ul > li{
+  list-style:none;
+  float:left;
+  width:19%;
+  height:100%;
+  opacity:0.6;
+}
+
+.App-header > ul > li:hover{
+  opacity:0.9;
+  background-color:black;
+};
+
+.body-content-test {
+  height:95%;
+  background:white;
 }
