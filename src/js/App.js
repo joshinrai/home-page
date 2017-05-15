@@ -7,6 +7,8 @@ import img2 from '../resource/img2.jpg' ;
 import img3 from '../resource/img3.jpg' ;
 import img4 from '../resource/img4.jpg' ;
 import img5 from '../resource/img5.jpg' ;
+
+import video1 from '../resource/flash1.fla' ;
 //import content from './content' ;
 
 class App extends Component {
@@ -40,7 +42,7 @@ class App extends Component {
             </li>
             <li>
               我的技术博客
-              <div className="blog-cell">
+              <div id="blog-cell">
                 <h3>关于http协议和https的差异</h3>
                 <hr/>
                 http协议
@@ -48,7 +50,7 @@ class App extends Component {
             </li>
             <li>
               我的个人作品
-              <div>
+              <div id="work-cell">
                 <ul className="cell-album">
                   <li>作品1
                   </li>
@@ -65,9 +67,10 @@ class App extends Component {
             </li>
             <li>
               我的影音
-              <div>
+              <div id="video-cell">
                 <ul className="cell-album">
-                  <li>影音1
+                  <li>
+                    <video src={video1}></video>
                   </li>
                   <li>影音2
                   </li>
@@ -82,7 +85,7 @@ class App extends Component {
             </li>
             <li>
               我的生活
-              <div>
+              <div id="life-cell">
                 <ul className="cell-album album-3">
                   <li>新闻
                   </li>

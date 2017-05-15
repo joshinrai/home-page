@@ -17,12 +17,12 @@
 .App-header {
   height: 85%;
   padding: 20px;
-  color: white;
+  color: rgb(250,128,10);
 }
 
 .App-intro {
   line-height:10%;
-  color:white;
+  color:rgb(250,128,10);
   font-size: large;
 }
 
@@ -44,6 +44,7 @@
 }
 
 .App-header > ul > li > div{
+  color:#000;
   background: white;
   height:95%;
   border:0.1px solid black;
@@ -73,13 +74,38 @@
   height:100%;
 }
 
-.blog-cell{
-  color:#000;
+#blog-cell{
+  background-image: url("../resource/paper.jpg") ;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
+#work-cell{
+  background-image: url("../resource/codeResource.jpg") ;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
+#work-cell > ul > li , #video-cell > ul > li , #life-cell > ul > li{
+  color:#fff;
+}
+
+#video-cell{
+  background-image:url("../resource/movie.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
+#life-cell{
+  background-image:url("../resource/life.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
 }
 
 .App-header > ul > li:hover{
   opacity:0.9;
   background-color:black;
+  border-radius:8px;
   transition:opacity 1s;
   transition:background-color 1s;
 };
