@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import contant from './contant' ;
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         </div>
         <p className="App-intro">
           ©joshinrai
+          <contant />
         </p>
       </div>
     );
