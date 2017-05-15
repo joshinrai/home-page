@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import logo from '../resource/logo.svg';
 import '../stylesheet/App.css';
+
+import img1 from '../resource/img1.jpg' ;
+import img2 from '../resource/img2.jpg' ;
+import img3 from '../resource/img3.jpg' ;
+import img4 from '../resource/img4.jpg' ;
+import img5 from '../resource/img5.jpg' ;
 //import content from './content' ;
 
 class App extends Component {
@@ -12,12 +18,83 @@ class App extends Component {
           <ul>
             <li>
               我的相册
-              <div className="body-content-test">test</div>
+              <div>
+                <ul className="cell-album">
+                  <li>
+                    <img className="img-style" src={img1} alt="img1"/>
+                  </li>
+                  <li>
+                    <img className="img-style" src={img2} alt="img2"/>
+                  </li>
+                  <li>
+                    <img className="img-style" src={img3} alt="img3"/>
+                  </li>
+                  <li>
+                    <img className="img-style" src={img4} alt="img4"/>
+                  </li>
+                  <li>
+                    <img className="img-style" src={img5} alt="img5"/>
+                  </li>
+                </ul>
+              </div>
             </li>
-            <li>我的技术博客</li>
-            <li>我的个人作品</li>
-            <li>我的影音</li>
-            <li>我的生活</li>
+            <li>
+              我的技术博客
+              <div className="blog-cell">
+                <h3>关于http协议和https的差异</h3>
+                <hr/>
+                http协议
+              </div>
+            </li>
+            <li>
+              我的个人作品
+              <div>
+                <ul className="cell-album">
+                  <li>作品1
+                  </li>
+                  <li>作品2
+                  </li>
+                  <li>作品3
+                  </li>
+                  <li>作品4
+                  </li>
+                  <li>作品5
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              我的影音
+              <div>
+                <ul className="cell-album">
+                  <li>影音1
+                  </li>
+                  <li>影音2
+                  </li>
+                  <li>影音3
+                  </li>
+                  <li>影音4
+                  </li>
+                  <li>影音5
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              我的生活
+              <div>
+                <ul className="cell-album album-3">
+                  <li>新闻
+                  </li>
+                  <li>游戏
+                  </li>
+                  <li>与我联系:
+                      <p>email:joshinrai@163.com</p>
+                      <p>github:https://github.com/joshinrai</p>
+                  </li>
+                </ul>
+              </div>
+            </li>
           </ul>
         </div>
         <p className="App-intro">

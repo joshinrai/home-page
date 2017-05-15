@@ -43,12 +43,43 @@
   opacity:0.6;
 }
 
+.App-header > ul > li > div{
+  background: white;
+  height:95%;
+  border:0.1px solid black;
+}
+
+.cell-album{
+  height:100%;
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+
+.cell-album > li{
+  width:100%;
+  height:20%;
+  color:#000;
+}
+
+.album-3 > li{
+  width: 100%;
+  height:33%;
+  color:#000;
+}
+
+.img-style{
+  width:100%;
+  height:100%;
+}
+
+.blog-cell{
+  color:#000;
+}
+
 .App-header > ul > li:hover{
   opacity:0.9;
   background-color:black;
+  transition:opacity 1s;
+  transition:background-color 1s;
 };
-
-.body-content-test {
-  height:95%;
-  background:white;
-}
