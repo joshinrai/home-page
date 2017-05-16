@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import { DatePicker } from 'antd' ;
+//import Slick from './common/slider' ;
 var workArr = [{name:"作品1",id:"work1"},{name:"作品2",id:"work2"},{name:"作品3",id:"work3"},
               {name:"作品4",id:"work4"},{name:"作品5",id:"work5"}] ;
 

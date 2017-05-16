@@ -18,7 +18,7 @@ class AlbumList extends Component {
 		index:0,data:albumArr
 	}
 	componentDidMount(){
-		var self = this ;
+		//var self = this ;
 		/*this.interval = setInterval(function(){
 	  		var _index = self.state.index ;
 	  		if( ++_index === albumArr.length)
