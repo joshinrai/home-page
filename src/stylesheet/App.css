@@ -34,6 +34,21 @@
 .App-header > ul{
   height:85%;
 }
+/*设置图标样式*/
+.icon-style{
+  margin:10px;
+  width:30px;
+  height:30px;
+  border-radius:15px;
+}
+
+/*设置图标悬停样式*/
+.icon-style:hover{
+  margin:0;
+  width:50px;
+  height:50px;
+  border-radius:25px;
+}
 
 .App-header > ul > li{
   list-style:none;
