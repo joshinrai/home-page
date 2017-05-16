@@ -50,20 +50,20 @@
   border:0.1px solid black;
 }
 
-.cell-album{
+.cell-module{
   height:100%;
   list-style-type:none;
   margin:0;
   padding:0;
 }
 
-.cell-album > li{
+.cell-module > li{
   width:100%;
   height:20%;
   color:#000;
 }
 
-.album-3 > li{
+.module-3 > li{
   width: 100%;
   height:33%;
   color:#000;
