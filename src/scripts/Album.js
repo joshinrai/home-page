@@ -14,9 +14,28 @@ class AlbumList extends Component {
 	functionTest(){
 		console.log("this is function test ...") ;
 	}
+	state = {
+		index:0,data:albumArr
+	}
+	componentDidMount(){
+		var self = this ;
+		/*this.interval = setInterval(function(){
+	  		var _index = self.state.index ;
+	  		if( ++_index === albumArr.length)
+	  			_index = 0 ;
+	  		var _arr = albumArr ;
+	  		var _list = _arr.splice(1 , _arr.length-1) ;
+	  		var list = _list.concat(_arr) ;
+	  		albumArr = list ;
+  			self.setState({index : _index , data : list}) ;
+  		},2000) ;*/
+	}
+	componentWillUnmount(){
+  		this.interval && clearInterval(this.interval) ;
+  	}
 	render(){
 		var self = this ;
-		var menus = this.props.items.map(function(item){
+		var menus = this.state.data.map(function(item){
 			return <li key={item.alt} onClick={self.functionTest}>
 						<img className="img-style" src={item.src} alt={item.alt}/>
 					</li> ;
@@ -26,14 +45,7 @@ class AlbumList extends Component {
 }
 
 class Album extends Component {
-	/*intervalFunction(){
-		setInterval(function(){
-			albumArr.unshift(albumArr[albumArr.length-1]) ;
-			albumArr.pop() ;
-		} , 2000) ;
-	}*/
   	render() {
-  		//this.intervalFunction() ;
 	    return (
 	      <div>
 	      	<AlbumList items={albumArr}/>

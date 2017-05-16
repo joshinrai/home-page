@@ -6,12 +6,12 @@ import Content from './Content' ;
 
 import Album from './Album' ;
 import Blog from './Blog' ;
-//import MyWork from './MyWork' ;
+import MyWork from './MyWork' ;
 import Video from './Video' ;
 import MyLife from './MyLife' ;
 
 var contentArr = [{name:"我的相册",id : "album",module:<Album />},{name:"我的博客",id : "blog",module:<Blog />},
-                  //{name:"我的作品" , id : "work",module:<MyWork />},
+                  {name:"我的作品" , id : "work",module:<MyWork />},
                   {name:"我的影音" , id : "video",module:<Video />},{name:"我的生活" , id : "my-life",module:<MyLife />}] ;
 
 class App extends Component {
