@@ -8,7 +8,6 @@ import img3 from '../resource/img3.jpg' ;
 import img4 from '../resource/img4.jpg' ;
 import img5 from '../resource/img5.jpg' ;
 
-import video1 from '../resource/flash1.fla' ;
 //import content from './content' ;
 
 class App extends Component {
@@ -70,7 +69,7 @@ class App extends Component {
               <div id="video-cell">
                 <ul className="cell-album">
                   <li>
-                    <video src={video1}></video>
+                    影音1
                   </li>
                   <li>影音2
                   </li>
