@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
+var arr = [{name : "影音1" , id : 1} , {name : "影音2" , id : 2} , {name : "影音3" , id : 3} , 
+           {name : "影音4" , id : 4} , {name : "影音5" , id : 5}] ;
+
+/*class Menu extends Component{
+  render(){
+    return(<li>{this.props.link}</li>) ;
+  }
+}*/
+
+class ViedeoList extends Component{
+  render(){
+    var menus = this.props.items.map(function(item){
+        //return <Menu key={item.id} link={item.name} /> ;
+        return <li key={item.id}>{item.name}</li> ;
+    }) ;
+    return (<ul className="cell-module">{menus}</ul>) ;
+  }
+}
 
 class Video extends Component {
   render() {
     return (
       <div id="video-cell">
-        <ul className="cell-module">
-          <li>
-            影音1
-          </li>
-          <li>影音2
-          </li>
-          <li>影音3
-          </li>
-          <li>影音4
-          </li>
-          <li>影音5
-          </li>
-        </ul>
+          <ViedeoList items={arr}/>
       </div>
     );
   }
