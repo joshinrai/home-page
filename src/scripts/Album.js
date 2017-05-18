@@ -15,10 +15,20 @@ class AlbumList extends Component {
 		console.log("this is function test ...") ;
 	}
 	state = {
-		index:0,data:albumArr
+		index:0,data:albumArr,
+		selfStyle : {
+			position:'relative',
+			width:'99%',
+			top:'2px',
+		}
 	}
+	/*selfStyle = {
+		position:'relative',
+		width:'95%',
+		top:'2px',
+	}*/
 	componentDidMount(){
-		//var self = this ;
+		var self = this ;
 		/*this.interval = setInterval(function(){
 	  		var _index = self.state.index ;
 	  		if( ++_index === albumArr.length)
@@ -29,14 +39,19 @@ class AlbumList extends Component {
 	  		albumArr = list ;
   			self.setState({index : _index , data : list}) ;
   		},2000) ;*/
+  		var selfTop =  parseInt(self.state.selfStyle.top.replace("px")) ;
+  		this.interval = setInterval(()=>{
+  			self.state.selfStyle.top = ++selfTop + "px" ;
+  			console.log("this is style:" , self.state.selfStyle) ;
+  		},2000) ;
 	}
 	componentWillUnmount(){
   		this.interval && clearInterval(this.interval) ;
   	}
 	render(){
 		var self = this ;
-		var menus = this.state.data.map(function(item){
-			return <li key={item.alt} onClick={self.functionTest}>
+		var menus = self.state.data.map(function(item){
+			return <li style={self.state.selfStyle} key={item.alt} onClick={self.functionTest}>
 						<img className="img-style" src={item.src} alt={item.alt}/>
 					</li> ;
 		}) ;
