@@ -39,7 +39,8 @@ class AlbumList extends Component {
 	  		albumArr = list ;
   			self.setState({index : _index , data : list}) ;
   		},2000) ;*/
-  		var selfTop =  parseInt(self.state.selfStyle.top.replace("px")) ;
+  		//添加parseInt的第二个参数，否则语法校验会报Missing radix parameter的错
+  		var selfTop =  parseInt( self.state.selfStyle.top.replace("px","") ,10) ;
   		this.interval = setInterval(()=>{
   			self.state.selfStyle.top = ++selfTop + "px" ;
   			console.log("this is style:" , self.state.selfStyle) ;
