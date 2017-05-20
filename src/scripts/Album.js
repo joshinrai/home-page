@@ -40,12 +40,18 @@ class AlbumList extends Component {
   			self.setState({index : _index , data : list}) ;
   		},2000) ;*/
   		//添加parseInt的第二个参数，否则语法校验会报Missing radix parameter的错
-  		//需要讲this.setState修改为setState
+  		//需要将this.setState修改为setState
   		var selfTop =  parseInt( self.state.selfStyle.top.replace("px","") ,10) ;
   		this.interval = setInterval(()=>{
-  			self.state.selfStyle.top = ++selfTop + "px" ;
+  			//self.state.selfStyle.top = ++selfTop + "px" ;
+  			self.setState({index:0,data:albumArr,
+				selfStyle : {
+					position:'relative',
+					width:'99%',
+					top:++selfTop+"px",
+				}}) ;
   			console.log("this is style:" , self.state.selfStyle) ;
-  		},2000) ;
+  		},1000) ;
 	}
 	componentWillUnmount(){
   		this.interval && clearInterval(this.interval) ;
