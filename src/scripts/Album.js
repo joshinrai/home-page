@@ -1,3 +1,7 @@
+/***
+ * @author : joshinrai
+ * @date : 2017-05-21
+ */
 import React, { Component } from 'react';
 
 import img1 from '../resource/img1.jpg' ;
@@ -9,6 +13,7 @@ import img5 from '../resource/img5.jpg' ;
 var albumArr = [{ src : img1 , alt : "img1" },{ src : img2 , alt : "img2"},
 				{ src : img3 , alt : "img3" },{ src : img4 , alt : "img4"},
 				{ src : img5 , alt : "img5" }] ;
+var _this,selfTop ;
 
 class AlbumList extends Component {
 	functionTest(){
@@ -18,48 +23,47 @@ class AlbumList extends Component {
 		index:0,data:albumArr,
 		selfStyle : {
 			position:'relative',
-			width:'99%',
-			top:'2px',
+			top:'0',
 		}
 	}
-	/*selfStyle = {
-		position:'relative',
-		width:'95%',
-		top:'2px',
-	}*/
-	componentDidMount(){
-		var self = this ;
-		/*this.interval = setInterval(function(){
-	  		var _index = self.state.index ;
-	  		if( ++_index === albumArr.length)
-	  			_index = 0 ;
-	  		var _arr = albumArr ;
-	  		var _list = _arr.splice(1 , _arr.length-1) ;
-	  		var list = _list.concat(_arr) ;
-	  		albumArr = list ;
-  			self.setState({index : _index , data : list}) ;
-  		},2000) ;*/
+	setMoveState(){
+		_this.setState({index:0,data:albumArr,
+			selfStyle : {
+				position:'relative',
+				top:selfTop+"%",
+			}
+		}) ;
+	}
+	startMove(){
+		_this = this ;
+
   		//添加parseInt的第二个参数，否则语法校验会报Missing radix parameter的错
-  		//需要将this.setState修改为setState
-  		var selfTop =  parseInt( self.state.selfStyle.top.replace("px","") ,10) ;
-  		this.interval = setInterval(()=>{
-  			//self.state.selfStyle.top = ++selfTop + "px" ;
-  			self.setState({index:0,data:albumArr,
-				selfStyle : {
-					position:'relative',
-					width:'99%',
-					top:++selfTop+"px",
-				}}) ;
-  			console.log("this is style:" , self.state.selfStyle) ;
-  		},1000) ;
+  		selfTop =  parseInt( _this.state.selfStyle.top.replace("px","") ,10) ;
+  		_this.interval = setInterval(_this.doMove , 30) ;
+	}
+	stopMove(){
+		this.interval && clearInterval(this.interval) ;
+	}
+	doMove(){
+		selfTop = -100 === selfTop ? 0 : Math.ceil(selfTop*10-1)/10 ;
+		if(0 === selfTop % 20){
+			_this.stopMove() ;
+			setTimeout(()=>{_this.startMove()},1000) ;
+		}
+  		
+		_this.setMoveState() ;
+	}
+	componentDidMount(){
+		this.startMove() ;
 	}
 	componentWillUnmount(){
-  		this.interval && clearInterval(this.interval) ;
+  		this.stopMove() ;
   	}
 	render(){
 		var self = this ;
-		var menus = self.state.data.map(function(item){
-			return <li style={self.state.selfStyle} key={item.alt} onClick={self.functionTest}>
+		var data = self.state.data.concat(self.state.data) ;
+		var menus = data.map(function(item,index){
+			return <li style={self.state.selfStyle} key={item.alt+"-"+index} onClick={self.functionTest}>
 						<img className="img-style" src={item.src} alt={item.alt}/>
 					</li> ;
 		}) ;
@@ -70,7 +74,7 @@ class AlbumList extends Component {
 class Album extends Component {
   	render() {
 	    return (
-	      <div>
+	      <div className="Hidde-OverFlow">
 	      	<AlbumList items={albumArr}/>
 	      </div>
 	    );

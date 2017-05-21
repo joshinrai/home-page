@@ -89,6 +89,13 @@
   height:100%;
 }
 
+/***
+ *设置相册高度不溢出
+ */
+.Hidde-OverFlow{
+  overflow:hidden;
+}
+
 #blog-cell{
   background-image: url("../resource/paper.jpg") ;
   background-repeat:no-repeat;
