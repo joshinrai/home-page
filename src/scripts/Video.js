@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-var arr = [{name : "影音1" , id : 1} , {name : "影音2" , id : 2} , {name : "影音3" , id : 3} , 
-           {name : "影音4" , id : 4} , {name : "影音5" , id : 5}] ;
+var arr = [{name : "影音1" , id : 1} , {name : "影音2" , id : 2} , {name : "影音3" , id : 3} ] ;
 
 /*class Menu extends Component{
   render(){

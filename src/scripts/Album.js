@@ -46,7 +46,7 @@ class AlbumList extends Component {
 	}
 	doMove(){
 		selfTop = -100 === selfTop ? 0 : Math.ceil(selfTop*10-1)/10 ;
-		if(0 === selfTop % 20){
+		if(0 === selfTop % 25){
 			_this.stopMove() ;
 			setTimeout(()=>{_this.startMove()},1000) ;
 		}

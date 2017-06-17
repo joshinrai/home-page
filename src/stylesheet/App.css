@@ -6,7 +6,18 @@
   background-image:url("../../public/background-1.jpg");
   background-repeat:no-repeat;
   background-size:cover;
-  text-align: center;
+  text-align:center;
+}
+
+.Back_img{
+  position:absolute;
+  height:100vh;
+  width:100vw;
+  animation-name: animar_fondo;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .App-logo {
@@ -50,6 +61,10 @@
   border-radius:25px;
 }
 
+.App-header > ul > li:first-child{
+  width:19%;
+}
+
 .App-header > ul > li{
   list-style:none;
   float:left;
@@ -74,7 +89,7 @@
 
 .cell-module > li{
   width:100%;
-  height:20%;
+  height:25%;
   color:#000;
 }
 
@@ -130,4 +145,17 @@
   border-radius:8px;
   transition:opacity 1s;
   transition:background-color 1s;
-};
+}
+
+@-webkit-keyframes animar_fondo {
+  from { -webkit-transform: scale(1) translate(0px);
+-moz-transform: scale(1) translate(0px);
+-ms-transform: scale(1) translate(0px);
+-o-transform: scale(1) translate(0px);
+transform: scale(1) translate(0px); }
+  to { -webkit-transform: scale(1.5) translate(50px);
+-moz-transform: scale(1.5) translate(50px);
+-ms-transform: scale(1.5) translate(50px);
+-o-transform: scale(1.5) translate(50px);
+transform: scale(1.5) translate(50px); }
+}
