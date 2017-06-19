@@ -1,4 +1,4 @@
-# joshinrai's home-page
+# joshinrai's home-page(react)
 ## 启动项目
 * npm start
 ###### ©joshinrai
