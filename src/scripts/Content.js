@@ -11,6 +11,7 @@ class Content extends Component {
   //手风琴效果
   accordion(){
     console.log("this is mouseOver ...",_this) ;
+    console.log("this's style...",_this.style) ;
   }
   componentDidMount(){
     _this = this ;
