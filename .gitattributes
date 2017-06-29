@@ -1,3 +1,8 @@
+*.html linguist-language=React
+*.js linguist-language=React
+*.json linguist-language=React
+*.css linguist-language=React
+
 # Auto detect text files and perform LF normalization
 * text=auto
 
@@ -15,7 +20,3 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
-
-*.html linguist-language=React
-*.js linguist-language=React
-*.json linguist-language=React
